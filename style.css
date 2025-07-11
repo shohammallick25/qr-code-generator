@@ -1,0 +1,287 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(#f3f3fb 50%, #377dff 50%);
+}
+
+.wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5em 4em;
+  position: absolute;
+  width: 31.25em;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 0.6em;
+  box-shadow: 0 1.5em 3em rgba(3, 21, 55, 0.3);
+  text-align: center;
+}
+
+#userInput {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #000000;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  outline: none;
+  margin-bottom: 1em;
+}
+
+.options {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+/* Select Dropdown with Glow */
+select {
+  appearance: none;
+  width: 8em;
+  padding: 0.45em 0.9em;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  background-color: #377dff;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.3em;
+  background-image: url("arrow.png");
+  background-repeat: no-repeat;
+  background-size: 1.1em;
+  background-position: 6em center;
+  box-shadow: 0 0 5px rgba(55, 125, 255, 0.4); /* subtle glow */
+  transition: box-shadow 0.3s ease;
+}
+
+select:hover,
+select:focus {
+  box-shadow: 0 0 10px rgba(55, 125, 255, 0.5);
+}
+
+select option {
+  background-color: #ffffff;
+  color: #377dff;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  font-size: 1.12em;
+}
+
+/* Color Pickers */
+.color-inp {
+  appearance: none;
+  background-color: transparent;
+  width: 3.1em;
+  height: 3.4em;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.color-inp::-webkit-color-swatch {
+  border-radius: 0.3em;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px black;
+}
+
+.color-inp::-moz-color-swatch {
+  border-radius: 0.3em;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px black;
+}
+
+/* Buttons Container */
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8em;
+}
+
+.hide {
+  display: none;
+}
+
+/* Neon Title */
+.neon-title {
+  font-size: 2.5rem;
+  color: #00ffff; /* Bright cyan */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+  text-shadow:
+    0 0 6px #00ffff,
+    0 0 12px #33e0ff,
+    0 0 24px #1a99cc,
+    0 0 36px #0077aa,
+    0 0 48px #00ffff,
+    0 0 72px #00e5ff;
+}
+
+
+
+/* Shared Neon Button Style */
+.neon-btn,
+#submit {
+  background: #00ffff;
+  color: black;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow:
+    0 0 5px #00ffff,
+    0 0 15px #00ffff,
+    0 0 30px #00ffff,
+    0 0 40px #00ffff;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Glow Effect */
+.neon-btn:hover,
+#submit:hover:not(:disabled) {
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff,
+    0 0 60px #00ffff;
+}
+
+/* Mirror Reflection */
+.neon-btn::after,
+#submit::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  color: black;
+  opacity: 0.3;
+  transform: scaleY(-1);
+  filter: blur(2px);
+  pointer-events: none;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+/* Disabled Buttons */
+.neon-btn:disabled,
+#submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Neon Select Dropdown - softer glow */
+.neon-select {
+  background: #00ffff;
+  color: black;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  box-shadow:
+    0 0 3px #00ffff,
+    0 0 8px #00ffff,
+    0 0 15px #00ffff,
+    0 0 20px #00ffff;
+  position: relative;
+  appearance: none;
+  background-image: url("arrow.png");
+  background-repeat: no-repeat;
+  background-size: 1.1em;
+  background-position: 6em center;
+}
+
+/* Select Mirror Reflection */
+.neon-select::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  color: black;
+  opacity: 0.2; /* lighter reflection */
+  transform: scaleY(-1);
+  filter: blur(2px);
+  pointer-events: none;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+/* Neon Color Pickers - softer glow */
+.neon-color {
+  background: #00ffff;
+  padding: 0.2rem;
+  border-radius: 10px;
+  box-shadow:
+    0 0 3px #00ffff,
+    0 0 8px #00ffff,
+    0 0 15px #00ffff,
+    0 0 20px #00ffff;
+  position: relative;
+}
+
+/* Glow on hover - softer */
+.neon-select:hover,
+.neon-color:hover {
+  box-shadow:
+    0 0 6px #00ffff,
+    0 0 12px #00ffff,
+    0 0 25px #00ffff,
+    0 0 35px #00ffff;
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #00ffff;  /* Neon blue color */
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #1e90ff;
+  pointer-events: none; /* So it doesn't interfere with clicks */
+  user-select: none;
+  font-size: 0.9rem;
+  z-index: 1000;
+}

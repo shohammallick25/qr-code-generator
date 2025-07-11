@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator</title>
+  <link rel="shortcut icon" href="1.jpg" type="image/jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<!-- Background Video -->
+<video autoplay muted loop id="background-video" playsinline>
+  <source src="1.mp4" type="video/mp4" />
+</video>
+
+<!-- QR Code App Wrapper -->
+<div class="wrapper">
+  <h1 class="neon-title">QR Generator</h1>
+  <input type="text" id="userInput" placeholder="Enter some text or URL" />
+
+  <div class="options">
+    <select class="neon-select sizeOptions" data-text="Size">
+      <option value="100">100 x 100</option>
+      <option value="200">200 x 200</option>
+      <option value="300">300 x 300</option>
+    </select>
+    <input type="color" id="BGColor" class="color-inp neon-color" data-text="BG Color" />
+    <input type="color" id="FGColor" class="color-inp neon-color" data-text="FG Color" />
+  </div>
+  <div class="box">
+    <button id="submit" class="neon-btn" data-text="Generate">Generate</button>
+    <a href="#" id="download" class="neon-btn" data-text="Download">Download</a>
+  </div>
+  <div class="container"></div>
+</div>
+
+<footer class="footer">
+  Developed by Shoham
+</footer>
+
+<!-- Script -->
+<script src="script.js"></script>
+</body>
+</html>
